@@ -1,63 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lords of Form</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .copy {
-      padding: 30px 0 10px;
-    }
-
-    .copy p {
-      font-family: "Cinzel", serif;
-      font-weight: 600;
-      font-size: clamp(14px, 2vw, 22px);
-      letter-spacing: .4em;
-      text-transform: uppercase;
-      margin: 0;
-      color: rgba(184,154,60,.85);
-      text-shadow:
-        0 0 1px rgba(0,0,0,.8);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=41">
 </head>
 
 <body>
 
-  <main class="stage">
-    <section class="card">
+  <main class="page">
+    <section class="container" aria-label="Lords of Form landing panel">
 
-      <header class="hero">
-        <img class="logo" src="./logo.jpg" alt="Lords of Form">
-      </header>
-
-      <div class="copy">
-        <p>COMING SOON</p>
+      <!-- LOGO -->
+      <div class="logoBox">
+        <img class="logoImg" src="assets/logo.jpg" alt="Lords of Form logo">
       </div>
 
-      <nav class="nav">
-        <a class="btn" href="https://lordsofform.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+      <!-- BAND TEXT (placeholder) -->
+      <div class="textBox" aria-label="Band description">
+        Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+        <br><br>
+        Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+        <br><br>
+        Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+      </div>
 
-        <a class="btn" href="https://www.facebook.com/lordsofform/" target="_blank" rel="noopener noreferrer">Facebook</a>
-
-        <a class="btn" href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA" target="_blank" rel="noopener noreferrer">YouTube</a>
-
-        <a class="btn" href="https://www.instagram.com/lords_of_form/" target="_blank" rel="noopener noreferrer">Instagram</a>
-
-        <a class="btn btn-solid" href="mailto:lordsofform@gmail.com">Contact</a>
+      <!-- BOTTOM BUTTONS -->
+      <nav class="buttonRow" aria-label="Links">
+        <a class="bigButton" href="https://lordsofform.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+        <a class="bigButton" href="https://www.facebook.com/lordsofform/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="bigButton" href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="bigButton" href="https://www.instagram.com/lords_of_form/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="bigButton" href="mailto:lordsofform@gmail.com">Contact</a>
       </nav>
 
     </section>
   </main>
+
+  <footer>
+    © <span id="year"></span> Lords of Form
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
