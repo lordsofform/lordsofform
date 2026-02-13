@@ -1,88 +1,53 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lords of Form</title>
 
-  <!-- cache-safe CSS -->
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <main class="page">
-
-    <section class="container">
+    <section class="container" aria-label="Lords of Form landing panel">
 
       <!-- LOGO -->
       <div class="logoBox">
-        <img 
-          class="logoImg"
-          src="logo.jpg"
-          alt="Lords of Form logo"
-        >
+        <img class="logoImg" src="logo.jpg" alt="Lords of Form logo">
       </div>
-
 
       <!-- COMING SOON -->
       <div class="comingSoon">
         FULL WEBSITE COMING SOON
       </div>
 
-
       <!-- BUTTONS -->
-      <nav class="buttonRow">
+      <nav class="buttonArea" aria-label="Lords of Form links">
 
-        <a class="bigButton"
-          href="https://lordsofform.bandcamp.com/"
-          target="_blank"
-          rel="noopener">
-          BANDCAMP
-        </a>
+        <div class="buttonRowTop">
+          <a class="bigButton" href="https://lordsofform.bandcamp.com/" target="_blank" rel="noopener noreferrer">BANDCAMP</a>
+          <a class="bigButton" href="https://www.facebook.com/lordsofform/" target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+          <a class="bigButton" href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+          <a class="bigButton" href="https://www.instagram.com/lords_of_form/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        </div>
 
-        <a class="bigButton"
-          href="https://www.facebook.com/lordsofform/"
-          target="_blank"
-          rel="noopener">
-          FACEBOOK
-        </a>
-
-        <a class="bigButton"
-          href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
-          target="_blank"
-          rel="noopener">
-          YOUTUBE
-        </a>
-
-        <a class="bigButton"
-          href="https://www.instagram.com/lords_of_form/"
-          target="_blank"
-          rel="noopener">
-          INSTAGRAM
-        </a>
-
-        <a class="bigButton"
-          href="mailto:lordsofform@gmail.com">
-          CONTACT
-        </a>
+        <div class="buttonRowBottom">
+          <a class="bigButton bigButtonWide" href="mailto:lordsofform@gmail.com">CONTACT</a>
+        </div>
 
       </nav>
 
     </section>
-
   </main>
-
 
   <footer>
     © <span id="year"></span> Lords of Form
   </footer>
 
-
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
