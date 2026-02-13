@@ -1,77 +1,89 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lords of Form</title>
 
-  <!-- cache-bust css -->
-  <link rel="stylesheet" href="./styles.css?v=7">
+  <!-- cache-safe CSS -->
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body>
 
-<main class="page">
-  <section class="container">
+  <main class="page">
 
-    <!-- LOGO -->
-    <div class="logoBox">
-      <img class="logoImg" src="./logo.jpg?v=7" alt="Lords of Form logo">
-    </div>
+    <section class="container">
 
-    <!-- TEXT -->
-    <div class="textBox">
-      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
-      <br><br>
-      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
-      <br><br>
-      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
-    </div>
+      <!-- LOGO -->
+      <div class="logoBox">
+        <img 
+          class="logoImg"
+          src="logo.jpg"
+          alt="Lords of Form logo"
+        >
+      </div>
 
-    <!-- BUTTONS -->
-    <nav class="buttonRow">
 
-      <a class="bigButton"
-         href="https://lordsofform.bandcamp.com/"
-         target="_blank">
-         Bandcamp
-      </a>
+      <!-- COMING SOON -->
+      <div class="comingSoon">
+        FULL WEBSITE COMING SOON
+      </div>
 
-      <a class="bigButton"
-         href="https://www.facebook.com/lordsofform/"
-         target="_blank">
-         Facebook
-      </a>
 
-      <a class="bigButton"
-         href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
-         target="_blank">
-         YouTube
-      </a>
+      <!-- BUTTONS -->
+      <nav class="buttonRow">
 
-      <a class="bigButton"
-         href="https://www.instagram.com/lords_of_form/"
-         target="_blank">
-         Instagram
-      </a>
+        <a class="bigButton"
+          href="https://lordsofform.bandcamp.com/"
+          target="_blank"
+          rel="noopener">
+          BANDCAMP
+        </a>
 
-      <a class="bigButton"
-         href="mailto:lordsofform@gmail.com">
-         Contact
-      </a>
+        <a class="bigButton"
+          href="https://www.facebook.com/lordsofform/"
+          target="_blank"
+          rel="noopener">
+          FACEBOOK
+        </a>
 
-    </nav>
+        <a class="bigButton"
+          href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
+          target="_blank"
+          rel="noopener">
+          YOUTUBE
+        </a>
 
-  </section>
-</main>
+        <a class="bigButton"
+          href="https://www.instagram.com/lords_of_form/"
+          target="_blank"
+          rel="noopener">
+          INSTAGRAM
+        </a>
 
-<footer>
-© <span id="year"></span> Lords of Form
-</footer>
+        <a class="bigButton"
+          href="mailto:lordsofform@gmail.com">
+          CONTACT
+        </a>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      </nav>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © <span id="year"></span> Lords of Form
+  </footer>
+
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
