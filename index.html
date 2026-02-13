@@ -1,196 +1,77 @@
-@font-face{
-  font-family: "Portland Roman";
-  src: url("assets/fonts/Portland-Roman.woff2") format("woff2"),
-       url("assets/fonts/Portland-Roman.woff") format("woff");
-  font-display: swap;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lords of Form</title>
 
-/* ===== WARM ANTIQUE BRASS ===== */
-:root{
-  --brass-1:#f2e0b1;
-  --brass-2:#c5923a;
-  --brass-3:#7a4b16;
-  --brass-line: rgba(197,146,58,.28);
+  <!-- cache-bust css -->
+  <link rel="stylesheet" href="./styles.css?v=7">
+</head>
 
-  --panel: rgba(0,0,0,.80);
-  --panel-2: rgba(0,0,0,.62);
-}
+<body>
 
-*{ box-sizing:border-box; }
-html, body{ height:100%; margin:0; }
+<main class="page">
+  <section class="container">
 
-body{
-  background:#000;
-  color:#eee;
-  position: relative;
-}
+    <!-- LOGO -->
+    <div class="logoBox">
+      <img class="logoImg" src="./logo.jpg?v=7" alt="Lords of Form logo">
+    </div>
 
-/* ===== #1 VIGNETTE + GRAIN ===== */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(1200px 700px at 50% 30%,
-      rgba(0,0,0,0) 0%,
-      rgba(0,0,0,.55) 70%,
-      rgba(0,0,0,.78) 100%);
-  z-index: 0;
-}
+    <!-- TEXT -->
+    <div class="textBox">
+      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+      <br><br>
+      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+      <br><br>
+      Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
+    </div>
 
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .06;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 1px, rgba(0,0,0,0) 1px 3px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, rgba(0,0,0,0) 1px 4px);
-  mix-blend-mode: overlay;
-  z-index: 0;
-}
+    <!-- BUTTONS -->
+    <nav class="buttonRow">
 
-/* ===== LAYOUT ===== */
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:90px 0;
-}
+      <a class="bigButton"
+         href="https://lordsofform.bandcamp.com/"
+         target="_blank">
+         Bandcamp
+      </a>
 
-/* ===== #2 ALBUM-FRAME PANEL ===== */
-.container{
-  width:820px;
-  max-width:92%;
-  padding:60px;
+      <a class="bigButton"
+         href="https://www.facebook.com/lordsofform/"
+         target="_blank">
+         Facebook
+      </a>
 
-  background: var(--panel);
+      <a class="bigButton"
+         href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
+         target="_blank">
+         YouTube
+      </a>
 
-  border: 1px solid var(--brass-line);
-  box-shadow:
-    0 50px 140px rgba(0,0,0,.95),
-    inset 0 0 0 1px rgba(242,224,177,.06),
-    inset 0 0 40px rgba(197,146,58,.05);
+      <a class="bigButton"
+         href="https://www.instagram.com/lords_of_form/"
+         target="_blank">
+         Instagram
+      </a>
 
-  position: relative;
-  z-index: 1;
-}
+      <a class="bigButton"
+         href="mailto:lordsofform@gmail.com">
+         Contact
+      </a>
 
-.container::before{
-  content:"";
-  position:absolute;
-  inset: 16px;
-  border: 1px solid rgba(197,146,58,.12);
-  pointer-events:none;
-}
+    </nav>
 
-/* ===== #5 RHYTHM ===== */
-.logoBox{ margin-bottom: 28px; }
-.textBox{ margin-bottom: 34px; }
+  </section>
+</main>
 
-/* ===== LOGO ===== */
-.logoBox{ text-align:center; }
+<footer>
+© <span id="year"></span> Lords of Form
+</footer>
 
-.logoImg{
-  width:100%;
-  max-width:760px;
-  height:auto;
-  display:block;
-  margin:0 auto;
-  filter: brightness(1.18) contrast(1.08);
-}
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-/* ===== TEXT BOX ===== */
-.textBox{
-  border:1px solid rgba(197,146,58,.22);
-  padding:30px;
-
-  font-family:"Portland Roman", serif;
-  font-size:18px;
-  letter-spacing:.08em;
-  line-height:1.6;
-
-  background: var(--panel-2);
-
-  background-image: linear-gradient(180deg, var(--brass-1), var(--brass-2) 55%, var(--brass-3));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-/* ===== BUTTON GRID (iPhone-safe) ===== */
-.buttonRow{
-  display:grid;
-  gap:16px;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  align-items: stretch;
-}
-
-.bigButton{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-
-  min-height:58px;
-  padding:16px 12px;
-
-  text-decoration:none;
-
-  border:1px solid rgba(197,146,58,.30);
-  background: rgba(0,0,0,.35);
-
-  font-family:"Portland Roman", serif;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:14px;
-
-  background-image: linear-gradient(180deg, var(--brass-1), var(--brass-2) 55%, var(--brass-3));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-
-.bigButton:hover{
-  transform: translateY(-3px);
-  border-color: rgba(197,146,58,.65);
-  box-shadow: 0 10px 30px rgba(0,0,0,.75);
-}
-
-/* ===== MOBILE MASTER TUNING ===== */
-@media (max-width: 768px){
-  .container{ padding:34px; }
-
-  .logoImg{
-    max-width:92%;
-    filter: brightness(1.25) contrast(1.1);
-  }
-
-  .textBox{
-    font-size:16px;
-    line-height:1.5;
-    padding:22px;
-  }
-
-  .buttonRow{ gap:12px; }
-  .bigButton{
-    min-height:64px;
-    font-size:13px;
-    letter-spacing:.16em;
-  }
-}
-
-/* ===== FOOTER ===== */
-footer{
-  position: relative;
-  z-index: 1;
-  text-align:center;
-  padding:25px;
-  font-size:12px;
-  opacity:.7;
-}
+</body>
+</html>
