@@ -1,67 +1,67 @@
+
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Lords of Form</title>
 
   <!-- cache refresh -->
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="./styles.css?v=100">
 </head>
 
 <body>
 
 <main class="page">
-  <section class="container">
+  <section class="panel">
 
     <!-- LOGO -->
     <div class="logoBox">
       <!-- IMPORTANT: logo is in ROOT -->
-      <img class="logoImg" src="logo.jpg" alt="Lords of Form logo">
+      <img src="./logo.jpg?v=10" alt="Lords of Form logo" class="logo">
     </div>
-
 
     <!-- COMING SOON -->
     <div class="comingSoon">
       FULL WEBSITE COMING SOON
     </div>
 
+    <!-- BUTTON GRID -->
+    <nav class="buttonGrid">
 
-    <!-- BUTTONS -->
-    <nav class="buttonRow">
-
-      <a class="bigButton"
-        href="https://lordsofform.bandcamp.com/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Bandcamp
+      <a class="btn"
+         href="https://lordsofform.bandcamp.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+         Bandcamp
       </a>
 
-      <a class="bigButton"
-        href="https://www.facebook.com/lordsofform/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Facebook
+      <a class="btn"
+         href="https://www.facebook.com/lordsofform/"
+         target="_blank"
+         rel="noopener noreferrer">
+         Facebook
       </a>
 
-      <a class="bigButton"
-        href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
-        target="_blank"
-        rel="noopener noreferrer">
-        YouTube
+      <a class="btn"
+         href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
+         target="_blank"
+         rel="noopener noreferrer">
+         YouTube
       </a>
 
-      <a class="bigButton"
-        href="https://www.instagram.com/lords_of_form/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Instagram
+      <a class="btn"
+         href="https://www.instagram.com/lords_of_form/"
+         target="_blank"
+         rel="noopener noreferrer">
+         Instagram
       </a>
 
-      <a class="bigButton"
-        href="mailto:lordsofform@gmail.com">
-        Contact
+      <!-- wide button -->
+      <a class="btn btn-wide"
+         href="mailto:lordsofform@gmail.com">
+         Contact
       </a>
 
     </nav>
@@ -69,11 +69,9 @@
   </section>
 </main>
 
-
 <footer>
   © <span id="year"></span> Lords of Form
 </footer>
-
 
 <script>
 document.getElementById("year").textContent =
