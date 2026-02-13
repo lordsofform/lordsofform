@@ -1,196 +1,142 @@
-@font-face{
-  font-family: "Portland Roman";
-  src: url("assets/fonts/Portland-Roman.woff2") format("woff2"),
-       url("assets/fonts/Portland-Roman.woff") format("woff");
-  font-display: swap;
-}
+/* ========= ROOT ========= */
 
-/* ===== WARM ANTIQUE BRASS ===== */
 :root{
-  --brass-1:#f2e0b1;
-  --brass-2:#c5923a;
-  --brass-3:#7a4b16;
-  --brass-line: rgba(197,146,58,.28);
-
-  --panel: rgba(0,0,0,.80);
-  --panel-2: rgba(0,0,0,.62);
+  --black: #000;
+  --brass: #b08a2a;
+  --brass-soft: rgba(176,138,42,.35);
+  --brass-faint: rgba(176,138,42,.15);
 }
 
-*{ box-sizing:border-box; }
-html, body{ height:100%; margin:0; }
+/* ========= BASE ========= */
 
-body{
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
   background:#000;
-  color:#eee;
-  position: relative;
+  color:var(--brass);
+  height:100%;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ===== #1 VIGNETTE + GRAIN ===== */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(1200px 700px at 50% 30%,
-      rgba(0,0,0,0) 0%,
-      rgba(0,0,0,.55) 70%,
-      rgba(0,0,0,.78) 100%);
-  z-index: 0;
-}
+/* ========= LAYOUT ========= */
 
-body::after{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .06;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 1px, rgba(0,0,0,0) 1px 3px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, rgba(0,0,0,0) 1px 4px);
-  mix-blend-mode: overlay;
-  z-index: 0;
-}
-
-/* ===== LAYOUT ===== */
 .page{
   min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:90px 0;
-}
-
-/* ===== #2 ALBUM-FRAME PANEL ===== */
-.container{
-  width:820px;
-  max-width:92%;
-  padding:60px;
-
-  background: var(--panel);
-
-  border: 1px solid var(--brass-line);
-  box-shadow:
-    0 50px 140px rgba(0,0,0,.95),
-    inset 0 0 0 1px rgba(242,224,177,.06),
-    inset 0 0 40px rgba(197,146,58,.05);
-
-  position: relative;
-  z-index: 1;
-}
-
-.container::before{
-  content:"";
-  position:absolute;
-  inset: 16px;
-  border: 1px solid rgba(197,146,58,.12);
-  pointer-events:none;
-}
-
-/* ===== #5 RHYTHM ===== */
-.logoBox{ margin-bottom: 28px; }
-.textBox{ margin-bottom: 34px; }
-
-/* ===== LOGO ===== */
-.logoBox{ text-align:center; }
-
-.logoImg{
-  width:100%;
-  max-width:760px;
-  height:auto;
-  display:block;
-  margin:0 auto;
-  filter: brightness(1.18) contrast(1.08);
-}
-
-/* ===== TEXT BOX ===== */
-.textBox{
-  border:1px solid rgba(197,146,58,.22);
-  padding:30px;
-
-  font-family:"Portland Roman", serif;
-  font-size:18px;
-  letter-spacing:.08em;
-  line-height:1.6;
-
-  background: var(--panel-2);
-
-  background-image: linear-gradient(180deg, var(--brass-1), var(--brass-2) 55%, var(--brass-3));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-/* ===== BUTTON GRID (iPhone-safe) ===== */
-.buttonRow{
   display:grid;
-  gap:16px;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  align-items: stretch;
+  place-items:center;
+  padding:28px 16px 70px;
 }
 
-.bigButton{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.panel{
+  width:min(1000px,92vw);
+  padding:34px;
+  border:1px solid var(--brass-soft);
+
+  /* subtle double-frame */
+  box-shadow:
+    0 0 0 12px rgba(176,138,42,.04),
+    inset 0 0 0 1px rgba(176,138,42,.12);
+}
+
+/* ========= LOGO ========= */
+
+.logoBox{
+  border:1px solid var(--brass-faint);
+  padding:26px;
+  display:grid;
+  place-items:center;
+  margin-bottom:26px;
+}
+
+.logo{
+  width:min(760px,85vw);
+  height:auto;
+
+  /* brighten slightly without damage */
+  filter:brightness(1.18) contrast(1.05);
+}
+
+/* ========= COMING SOON ========= */
+
+.comingSoon{
   text-align:center;
+  border:1px solid var(--brass-faint);
+  padding:14px;
 
-  min-height:58px;
-  padding:16px 12px;
-
-  text-decoration:none;
-
-  border:1px solid rgba(197,146,58,.30);
-  background: rgba(0,0,0,.35);
-
-  font-family:"Portland Roman", serif;
-  letter-spacing:.18em;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  font-size:14px;
 
-  background-image: linear-gradient(180deg, var(--brass-1), var(--brass-2) 55%, var(--brass-3));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  margin-bottom:26px;
 }
 
-.bigButton:hover{
-  transform: translateY(-3px);
-  border-color: rgba(197,146,58,.65);
-  box-shadow: 0 10px 30px rgba(0,0,0,.75);
+/* ========= BUTTON GRID ========= */
+
+.buttonGrid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(170px,1fr));
+
+  gap:16px;
 }
 
-/* ===== MOBILE MASTER TUNING ===== */
-@media (max-width: 768px){
-  .container{ padding:34px; }
+/* ========= BUTTON ========= */
 
-  .logoImg{
-    max-width:92%;
-    filter: brightness(1.25) contrast(1.1);
-  }
+.btn{
+  border:1px solid var(--brass-soft);
+  padding:18px;
 
-  .textBox{
-    font-size:16px;
-    line-height:1.5;
+  text-align:center;
+  text-decoration:none;
+  color:var(--brass);
+
+  letter-spacing:.25em;
+  text-transform:uppercase;
+
+  transition:.18s ease;
+}
+
+.btn:hover{
+  border-color:var(--brass);
+  transform:translateY(-2px);
+}
+
+.btn:active{
+  transform:translateY(0);
+}
+
+/* wide contact button */
+.btn-wide{
+  grid-column:1 / -1;
+}
+
+/* ========= FOOTER ========= */
+
+footer{
+  text-align:center;
+  font-size:12px;
+  padding:18px;
+  opacity:.7;
+}
+
+/* ========= MOBILE FIX ========= */
+
+@media(max-width:480px){
+
+  .panel{
     padding:22px;
   }
 
-  .buttonRow{ gap:12px; }
-  .bigButton{
-    min-height:64px;
-    font-size:13px;
-    letter-spacing:.16em;
+  .buttonGrid{
+    grid-template-columns:1fr;
   }
-}
 
-/* ===== FOOTER ===== */
-footer{
-  position: relative;
-  z-index: 1;
-  text-align:center;
-  padding:25px;
-  font-size:12px;
-  opacity:.7;
+  .btn{
+    letter-spacing:.18em;
+  }
+
 }
