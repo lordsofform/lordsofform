@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lords of Form</title>
 
-  <link rel="stylesheet" href="styles.css?v=41">
+  <!-- Cache-busted CSS -->
+  <link rel="stylesheet" href="/styles.css?v=42">
 </head>
 
 <body>
@@ -15,10 +16,11 @@
 
       <!-- LOGO -->
       <div class="logoBox">
-        <img class="logoImg" src="logo.jpg?v=2" alt="Lords of Form logo">
+        <!-- Absolute path from site root -->
+        <img class="logoImg" src="/logo.jpg?v=3" alt="Lords of Form logo">
       </div>
 
-      <!-- BAND TEXT (placeholder) -->
+      <!-- BAND TEXT PLACEHOLDER -->
       <div class="textBox" aria-label="Band description">
         Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
         <br><br>
@@ -27,13 +29,42 @@
         Lords of Form • Lords of Form • Lords of Form • Lords of Form • Lords of Form
       </div>
 
-      <!-- BOTTOM BUTTONS -->
-      <nav class="buttonRow" aria-label="Links">
-        <a class="bigButton" href="https://lordsofform.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-        <a class="bigButton" href="https://www.facebook.com/lordsofform/" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a class="bigButton" href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a class="bigButton" href="https://www.instagram.com/lords_of_form/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="bigButton" href="mailto:lordsofform@gmail.com">Contact</a>
+      <!-- BUTTONS -->
+      <nav class="buttonRow" aria-label="Lords of Form links">
+
+        <a class="bigButton"
+           href="https://lordsofform.bandcamp.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+           Bandcamp
+        </a>
+
+        <a class="bigButton"
+           href="https://www.facebook.com/lordsofform/"
+           target="_blank"
+           rel="noopener noreferrer">
+           Facebook
+        </a>
+
+        <a class="bigButton"
+           href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA"
+           target="_blank"
+           rel="noopener noreferrer">
+           YouTube
+        </a>
+
+        <a class="bigButton"
+           href="https://www.instagram.com/lords_of_form/"
+           target="_blank"
+           rel="noopener noreferrer">
+           Instagram
+        </a>
+
+        <a class="bigButton"
+           href="mailto:lordsofform@gmail.com">
+           Contact
+        </a>
+
       </nav>
 
     </section>
