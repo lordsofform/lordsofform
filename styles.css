@@ -1,142 +1,102 @@
-/* ========= ROOT ========= */
+/* styles.css */
 
-:root{
-  --black: #000;
-  --brass: #b08a2a;
-  --brass-soft: rgba(176,138,42,.35);
-  --brass-faint: rgba(176,138,42,.15);
-}
-
-/* ========= BASE ========= */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html,body{
-  background:#000;
-  color:var(--brass);
-  height:100%;
+/* ===== Reset / base ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: #000;
+  color: #d1b15a;
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ========= LAYOUT ========= */
-
-.page{
-  min-height:100vh;
-  display:grid;
-  place-items:center;
-  padding:28px 16px 70px;
+/* ===== Layout ===== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-.panel{
-  width:min(1000px,92vw);
-  padding:34px;
-  border:1px solid var(--brass-soft);
-
-  /* subtle double-frame */
-  box-shadow:
-    0 0 0 12px rgba(176,138,42,.04),
-    inset 0 0 0 1px rgba(176,138,42,.12);
+.container {
+  width: min(980px, 100%);
+  border: 1px solid rgba(209, 177, 90, 0.25);
+  padding: 28px;
 }
 
-/* ========= LOGO ========= */
-
-.logoBox{
-  border:1px solid var(--brass-faint);
-  padding:26px;
-  display:grid;
-  place-items:center;
-  margin-bottom:26px;
+/* ===== Logo ===== */
+.logoBox {
+  text-align: center;
+  margin-bottom: 22px;
 }
 
-.logo{
-  width:min(760px,85vw);
-  height:auto;
-
-  /* brighten slightly without damage */
-  filter:brightness(1.18) contrast(1.05);
+.logoImg {
+  max-width: min(720px, 100%);
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* ========= COMING SOON ========= */
-
-.comingSoon{
-  text-align:center;
-  border:1px solid var(--brass-faint);
-  padding:14px;
-
-  letter-spacing:.22em;
-  text-transform:uppercase;
-
-  margin-bottom:26px;
+/* ===== Coming soon ===== */
+.comingSoon {
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 10px 0 26px;
 }
 
-/* ========= BUTTON GRID ========= */
-
-.buttonGrid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(170px,1fr));
-
-  gap:16px;
+/* ===== Buttons ===== */
+.buttonRow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: center;
 }
 
-/* ========= BUTTON ========= */
+.bigButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.btn{
-  border:1px solid var(--brass-soft);
-  padding:18px;
+  padding: 16px 14px;
+  border: 1px solid rgba(209, 177, 90, 0.35);
 
-  text-align:center;
-  text-decoration:none;
-  color:var(--brass);
+  color: #d1b15a;
+  text-decoration: none;
 
-  letter-spacing:.25em;
-  text-transform:uppercase;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 13px;
 
-  transition:.18s ease;
+  background: transparent;
+  transition: background 150ms ease;
 }
 
-.btn:hover{
-  border-color:var(--brass);
-  transform:translateY(-2px);
+.bigButton:hover {
+  background: rgba(209, 177, 90, 0.08);
 }
 
-.btn:active{
-  transform:translateY(0);
+/* Make the Contact button wider on desktop */
+.bigButton.contact {
+  grid-column: 1 / span 2;
 }
 
-/* wide contact button */
-.btn-wide{
-  grid-column:1 / -1;
+/* ===== Footer ===== */
+footer {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.75;
 }
 
-/* ========= FOOTER ========= */
-
-footer{
-  text-align:center;
-  font-size:12px;
-  padding:18px;
-  opacity:.7;
-}
-
-/* ========= MOBILE FIX ========= */
-
-@media(max-width:480px){
-
-  .panel{
-    padding:22px;
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+  .buttonRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .buttonGrid{
-    grid-template-columns:1fr;
+  .bigButton.contact {
+    grid-column: 1 / -1;
   }
-
-  .btn{
-    letter-spacing:.18em;
-  }
-
 }
