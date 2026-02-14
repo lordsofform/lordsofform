@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lords of Form</title>
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+
+<body>
+  <main class="page">
+    <section class="container" aria-label="Lords of Form landing panel">
+
+      <div class="logoBox">
+        <img class="logoImg" src="logo.jpg" alt="Lords of Form" />
+      </div>
+
+      <div class="comingSoon">Full website coming soon</div>
+
+      <nav class="buttonRow" aria-label="Links">
+        <a class="bigButton" href="https://lordsofform.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+        <a class="bigButton" href="https://www.facebook.com/lordsofform/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="bigButton" href="https://www.youtube.com/channel/UCzbmExrlILsdEvipOS1WtDA" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="bigButton" href="https://www.instagram.com/lords_of_form/" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+        <a class="bigButton contact" href="mailto:lordsofform@gmail.com">Contact</a>
+      </nav>
+
+      <footer>
+        © <span id="year"></span> Lords of Form
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
